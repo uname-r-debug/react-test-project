@@ -9,3 +9,13 @@
 - implement backend login for form validation and credential storage.
 - improve index page ui.
 - refactor code.
+
+## DEPENDENCY MANAGEMENT AND BUILDING
+- using npm
+  - `cd <project-root>
+  - `npm i
+- building
+  - `npm run build
+
+## DISCLAIMER
+- this project will eventually be archived/deleted in favor of better projects in the future.
