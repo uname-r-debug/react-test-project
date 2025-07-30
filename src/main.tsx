@@ -8,9 +8,9 @@ import { ThemeProvider } from "./components/ThemeProvider.tsx";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider defaultTheme="dark">
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </ThemeProvider>
   </StrictMode>,
 );

@@ -10,7 +10,11 @@ import Split from "./layouts/split";
 import { IoTimerSharp } from "react-icons/io5";
 import CenterXY from "./anchor/Center";
 import InfoCard from "./info-card";
-import { AccordionItem, AccordionTrigger, AccordionContent } from "@radix-ui/react-accordion";
+import {
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@radix-ui/react-accordion";
 import DropDown from "./ui/dropdown";
 import { FaAngleDown } from "react-icons/fa";
 type ResponseStatus = {
@@ -44,7 +48,7 @@ export default function Index(): React.JSX.Element {
   const [name, setName] = useState<string>("");
   const [placeholder, setPlaceholder] = useState<string>("");
   const [source, setSrc] = useState<string>("");
-  const [display, setDisplay] = useState<Array<React.ReactNode>>([undefined]); 
+  const [display, setDisplay] = useState<Array<React.ReactNode>>([undefined]);
   useEffect(() => {
     const { response } = status;
     if (response.status == 200) {
@@ -53,15 +57,20 @@ export default function Index(): React.JSX.Element {
       for (let i: number = 0; i < response.stats.length; ++i) {
         const stat = response.stats[i];
         stats.push(
-        <AccordionItem value={`item-${i + 1}`} key={"k-" + i.toString()} className="flex flex-col">
-          <AccordionTrigger className="w-[100%] flex justify-between items-center border-b permanent-marker-regular">{stat.stat.name} <FaAngleDown className="animate-bounce"/></AccordionTrigger>
-          <AccordionContent>{stat.base_stat}</AccordionContent>
-        </AccordionItem>
+          <AccordionItem
+            value={`item-${i + 1}`}
+            key={"k-" + i.toString()}
+            className="flex flex-col"
+          >
+            <AccordionTrigger className="w-[100%] flex justify-between items-center border-b permanent-marker-regular">
+              {stat.stat.name} <FaAngleDown className="animate-bounce" />
+            </AccordionTrigger>
+            <AccordionContent>{stat.base_stat}</AccordionContent>
+          </AccordionItem>,
         );
       }
       setDisplay(stats);
-    }
-    else setSrc("");
+    } else setSrc("");
   }, [status]);
   return (
     <Pad classList="px-10 py-5 min-h-[inherit] flex flex-col gap-10">
@@ -72,7 +81,10 @@ export default function Index(): React.JSX.Element {
               <IoHomeOutline className="hover:cursor-pointer" />
             </Link>
             <div className="flex w-[80%] items-center gap-2">
-              <Input onChange={(e) => setName(e.target.value)} className="permanent-marker-regular"/>
+              <Input
+                onChange={(e) => setName(e.target.value)}
+                className="permanent-marker-regular"
+              />
               <FaSearchengin
                 onClick={async () => {
                   try {
@@ -130,7 +142,7 @@ export default function Index(): React.JSX.Element {
       <Split>
         {CenterXY({
           element: source.length ? (
-            <img src={source} className="w-[500px] h-[500px] animate-bounce"/>
+            <img src={source} className="w-[500px] h-[500px] animate-bounce" />
           ) : (
             <IoTimerSharp className="animate-spin" />
           ),
@@ -138,7 +150,9 @@ export default function Index(): React.JSX.Element {
         })}
         <div className="border-2 border"></div>
         <InfoCard>
-          <div className="permanent-marker-regular animate-bounce">{placeholder}</div>
+          <div className="permanent-marker-regular animate-bounce">
+            {placeholder}
+          </div>
           <div className="flex flex-col gap-4">
             <DropDown>{display}</DropDown>
           </div>
