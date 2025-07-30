@@ -82,7 +82,7 @@ export default function Index(): React.JSX.Element {
             </Link>
             <div className="flex w-[80%] items-center gap-2">
               <Input
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => setName(e.target.value.toLocaleLowerCase())}
                 className="permanent-marker-regular"
               />
               <FaSearchengin
