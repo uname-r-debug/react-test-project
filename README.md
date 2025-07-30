@@ -7,7 +7,9 @@
 
 ## TODO
 - implement backend login for form validation and credential storage.
-- improve index page ui.
+- add API routes to facilitate CRUD operations on backend.
+- improve index page ui and layouts.
+- add new features to frontend.
 - refactor code.
 
 ## DEPENDENCY MANAGEMENT AND BUILDING
