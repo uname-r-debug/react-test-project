@@ -14,7 +14,7 @@
 
 ## DEPENDENCY MANAGEMENT AND BUILDING
 - using npm
-  - $ cd <project-root>
+  - $ cd /path/to/project-root
   - $ npm i
 - building
   - $ npm run build
