@@ -12,10 +12,10 @@
 
 ## DEPENDENCY MANAGEMENT AND BUILDING
 - using npm
-  - `cd <project-root>
-  - `npm i
+  - $ cd <project-root>
+  - $ npm i
 - building
-  - `npm run build
+  - $ npm run build
 
 ## DISCLAIMER
 - this project will eventually be archived/deleted in favor of better projects in the future.
